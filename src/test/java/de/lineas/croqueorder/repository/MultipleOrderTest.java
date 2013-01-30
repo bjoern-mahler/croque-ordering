@@ -7,6 +7,7 @@ import org.joda.time.DateMidnight;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,12 +21,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Some tests with multiple order objects configured in data.json
+ * Some tests with multiple order objects configured in simple-data.json
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:repository-context.xml", "classpath:test-data-context.xml"})
+@ContextConfiguration(locations = {"classpath:repository-context.xml", "classpath:test-simple-data-context.xml"})
 @Transactional
-public class MultipleOrderTests {
+@DirtiesContext
+public class MultipleOrderTest {
 
     @Autowired
     private UserRepository userRepository;
@@ -65,7 +67,7 @@ public class MultipleOrderTests {
     @Test
     public void testFindByMealInRange() throws Exception {
         Date from = new DateMidnight(2012, 12, 23).toDate();
-        Date to = new DateMidnight(2013, 1, 3).toDate(); //mind the utc time (see data.json!)
+        Date to = new DateMidnight(2013, 1, 3).toDate(); //mind the utc time (see simple-data.json!)
 
         List<MealOrder> croquesInRange = orderRepository.findByItemAndDateBetween(Article.Croque, from, to);
 

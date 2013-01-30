@@ -17,6 +17,6 @@
 	
 	<bean id="auditorAware" class="de.lineas.croqueorder.auditing.AuditorAwareness" />
 
-	<jpa:repositories base-package="de.lineas.croqueorder.repository.simple" />
+	<jpa:repositories base-package="de.lineas.croqueorder.repository" />
 
 </beans>

@@ -2,7 +2,6 @@ package de.lineas.croqueorder.repository;
 
 import de.lineas.croqueorder.domain.Article;
 import de.lineas.croqueorder.domain.User;
-import de.lineas.croqueorder.repository.simple.SimpleUserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,12 +16,12 @@ import static org.junit.Assert.*;
  * Ordering tests
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:simple-repository-context.xml")
+@ContextConfiguration(locations = "classpath:repository-context.xml")
 @Transactional
 public class OrderTest {
 
 	@Autowired
-	private SimpleUserRepository repository;
+	private UserRepository repository;
 
     private User user;
 

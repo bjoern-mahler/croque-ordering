@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:repository="http://www.springframework.org/schema/data/repository"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/data/repository
+    http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd">
+
+    <!-- this works only with 1.5xsd and latest 1.5 spring-data-commons-core snapshot release because of a typo bug on "location(s)". -->
+    <repository:jackson-populator locations="classpath:pagination-data.json" />
+</beans>

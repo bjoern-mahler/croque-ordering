@@ -8,5 +8,5 @@
     http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd">
 
     <!-- this works only with 1.5xsd and latest 1.5 spring-data-commons-core snapshot release because of a typo bug on "location(s)". -->
-    <repository:jackson-populator locations="classpath:data.json" />
+    <repository:jackson-populator locations="classpath:simple-data.json" />
 </beans>

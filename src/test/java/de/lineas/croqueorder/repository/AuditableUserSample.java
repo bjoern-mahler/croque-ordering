@@ -1,16 +1,15 @@
 package de.lineas.croqueorder.repository;
 
-import static org.junit.Assert.*;
-
+import de.lineas.croqueorder.auditing.AuditableUser;
 import de.lineas.croqueorder.auditing.AuditorAwareness;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import de.lineas.croqueorder.auditing.AuditableUser;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Oliver Gierke
@@ -21,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class AuditableUserSample {
 
 	@Autowired
-	private CrudRepository<AuditableUser, Long> repository;
+	private AuditableUserRepository repository;
 
 	@Autowired
 	private AuditorAwareness auditorAware;
