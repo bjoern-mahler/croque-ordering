@@ -1,2 +1,6 @@
-This small project which is inspired by oliver-gierkes spring-data-jpa-example project may be used for
-demonstrating spring-data-jpa.
+This small project, which is inspired by oliver-gierkes spring-data-jpa-example project, may be used for
+demonstrating spring-data-jpa. 
+
+A User can order MealOrder with a specified Article, an amount and an order date.
+
+The repository interfaces can be used for interaction with the database.
