@@ -1,9 +1,10 @@
 package de.lineas.croqueorder.auditing;
 
-import javax.persistence.Entity;
-
 import org.springframework.data.domain.Auditable;
 import org.springframework.data.jpa.domain.AbstractAuditable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 /**
  * User domain class that uses auditing functionality of Spring Data that can either be aquired implementing
@@ -16,6 +17,7 @@ public class AuditableUser extends AbstractAuditable<AuditableUser, Long> {
 
 	private static final long serialVersionUID = 1L;
 
+    @Column(unique = true)
 	private String username;
 
 	/**

@@ -1,12 +1,11 @@
 package de.lineas.croqueorder.repository;
 
-import java.util.List;
+import de.lineas.croqueorder.domain.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;
-
-import de.lineas.croqueorder.domain.User;
+import java.util.List;
 
 /**
  * Implementation fo the custom repository functionality declared in {@link UserRepositoryCustom} based on JPA. To use
@@ -49,7 +48,6 @@ class UserRepositoryImpl implements UserRepositoryCustom {
 
 
 	public List<User> myCustomBatchOperation() {
-
 		CriteriaQuery<User> criteriaQuery = em.getCriteriaBuilder().createQuery(User.class);
 		return em.createQuery(criteriaQuery).getResultList();
 	}
